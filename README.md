@@ -7,4 +7,4 @@
 [tag] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.pdf)
   Seemed that they crime accures about the same on every day.
 * Next i checked if a certain area has higher crime rate then others:
-[tag] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.pdf)
+[tag] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.png)
