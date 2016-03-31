@@ -4,7 +4,29 @@
 ### [Downloaded from a Kaggle competition.](https://www.kaggle.com/c/sf-crime/data?test.csv.zip)
 #### The idea of this competition is to predict the category of crimes commited in San Fransisco. But for this drill i will start with analyzing the most dangerous area and time for a crime to happen, and use these results for the competition.
 
-data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
+
+
+##### data$hour <- c(hour(data$Dates))
+##### head(data)
+
+
+Id               Dates DayOfWeek PdDistrict                  Address <br>
+1  0 2015-05-10 23:59:00    Sunday    BAYVIEW  2000 Block of THOMAS AV <br>
+2  1 2015-05-10 23:51:00    Sunday    BAYVIEW       3RD ST / REVERE AV <br>
+3  2 2015-05-10 23:50:00    Sunday   NORTHERN   2000 Block of GOUGH ST <br>
+4  3 2015-05-10 23:45:00    Sunday  INGLESIDE 4700 Block of MISSION ST <br>
+5  4 2015-05-10 23:45:00    Sunday  INGLESIDE 4700 Block of MISSION ST <br>
+6  5 2015-05-10 23:40:00    Sunday    TARAVAL    BROAD ST / CAPITOL AV <br>
+          X        Y hour <br>
+\1 -122.3996 37.73505   23 <br>
+2 -122.3915 37.73243   23 <br>
+3 -122.4260 37.79221   23 <br>
+4 -122.4374 37.72141   23 <br>
+5 -122.4374 37.72141   23 <br>
+6 -122.4590 37.71317   23 <br>
+
+###### The data set contains an id, time stamp, day of week, district in SF, address, geolocation.  I filtered and added an 'hour' collumn so i can more effectively filter the time of the crime.
+
 
 * First i checked what day of the week crime accures. <br>
 -barplot(table(data$DayOfWeek), col='blue') <br>
