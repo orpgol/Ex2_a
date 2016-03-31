@@ -2,6 +2,8 @@
 
 ## San Francisco Crime Classification
 ### [Downloaded from a Kaggle competition.](https://www.kaggle.com/c/sf-crime/data?test.csv.zip)
+#### The idea of this competition is to predict the category of crimes commited in San Fransisco. But for this drill i will start with analyzing the most dangerous area and time for a crime to happen, and use these results for the competition.
+
 data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 
 * First i checked what day of the week crime accures. <br>
