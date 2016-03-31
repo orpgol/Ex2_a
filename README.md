@@ -4,6 +4,5 @@
 ### [Downloaded from a Kaggle competition.](https://www.kaggle.com/c/sf-crime/data?test.csv.zip)
 
 * First i checked what day of the week crime accures and got: 
+tag] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.pdf)
 
-   Friday    Monday  Saturday    Sunday  Thursday   Tuesday Wednesday <br>
-   134703    122226    127038    116415    126541    126940    130399 
