@@ -18,4 +18,14 @@ data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 -data$hour <- c(hour(data$Dates)) <br>
 -barplot(table(data$hour), col='purple') <br>
 [times] (https://github.com/orpgol/Ex2_a/blob/master/Rplot02.png)<br>
-  Crime happens more during the night-time! Makes sense...
+  Crime peaks after-noon from 16-19, also at 12 and midnight...
+
+* Since 18 looks like the most dangerous hour to be outside, i checked what the crime looks like at 18 on the south side of San fransisco <br>
+-# getting the map
+map <- get_map(location = c(lon = mean(data1$X), lat = mean(data1$Y)), zoom = 15,
+               maptype = "satellite", scale = 2)
+-# plotting the map with some points on it
+ggmap(map) +
+  geom_point(data = data1, aes(x = X, y = Y, colour = ifelse(hour==18,F,T), alpha = 0.1), size = 2, shape = 21) +  guides(fill=FALSE, alpha=FALSE, size=FALSE) <br>
+[map] (https://github.com/orpgol/Ex2_a/blob/master/map.png)<br>
+
