@@ -18,3 +18,4 @@ data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 -data$hour <- c(hour(data$Dates)) <br>
 -barplot(table(data$hour), col='purple') <br>
 [times] (https://github.com/orpgol/Ex2_a/blob/master/Rplot02.png)<br>
+  Crime happens more during the night-time! Makes sense...
