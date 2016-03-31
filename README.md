@@ -10,10 +10,11 @@ data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
   Seemed that they crime accures about the same on every day. <br>
 
 * Next i checked if a certain area has higher crime rate then others. <br>
-- barplot(table(data$PdDistrict), col='blue') <br>
+-barplot(table(data$PdDistrict), col='blue') <br>
 [area] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.png)<br>
   Looks like Southern leads the crime rate in SF! <br>
 
-* Now i want to see what at what time criminals like working 
-- data$hour <- c(hour(data$Dates)) <br>
-- 
+* Now i want to see what at what time criminals like working <br>
+-data$hour <- c(hour(data$Dates)) <br>
+-barplot(table(data$hour), col='purple') <br>
+[times] (https://github.com/orpgol/Ex2_a/blob/master/Rplot2.png)<br>
