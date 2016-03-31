@@ -17,4 +17,4 @@ data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 * Now i want to see what at what time criminals like working <br>
 -data$hour <- c(hour(data$Dates)) <br>
 -barplot(table(data$hour), col='purple') <br>
-[times] (https://github.com/orpgol/Ex2_a/blob/master/Rplot2.png)<br>
+[times] (https://github.com/orpgol/Ex2_a/blob/master/Rplot02.png)<br>
