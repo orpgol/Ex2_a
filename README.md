@@ -4,12 +4,16 @@
 ### [Downloaded from a Kaggle competition.](https://www.kaggle.com/c/sf-crime/data?test.csv.zip)
 data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 
-* First i used: barplot(table(data$DayOfWeek), col='blue')
-and checked what day of the week crime accures and got: 
-[weekly] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.pdf)
-  Seemed that they crime accures about the same on every day.
+* First i checked what day of the week crime accures. <br>
+-barplot(table(data$DayOfWeek), col='blue') <br>
+[weekly] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.pdf) <br>
+  Seemed that they crime accures about the same on every day. <br>
 
-* Next i used [area] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.png) to check if a certain area has higher crime rate then others:
-* barplot(table(data$PdDistrict), col='blue')
-  Looks like Southern leads the crime rate in SF!
+* Next i checked if a certain area has higher crime rate then others. <br>
+- barplot(table(data$PdDistrict), col='blue') <br>
+[area] (https://github.com/orpgol/Ex2_a/blob/master/Rplot.png)<br>
+  Looks like Southern leads the crime rate in SF! <br>
 
+* Now i want to see what at what time criminals like working 
+- data$hour <- c(hour(data$Dates)) <br>
+- 
