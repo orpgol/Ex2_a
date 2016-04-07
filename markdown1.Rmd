@@ -1,0 +1,82 @@
+---
+title: "markdown1"
+author: "Orpaz Goldstein"
+date: "April 7, 2016"
+output: html_document
+---
+
+# Ex2_a
+
+## San Francisco Crime Classification
+### [Downloaded from a Kaggle competition.](https://www.kaggle.com/c/sf-crime/data?test.csv.zip)
+#### The idea of this competition is to predict the category of crimes commited in San Fransisco. But for this drill i will start with analyzing the most dangerous area and time for a crime to happen, and use these results for the competition.
+
+```{r}
+# install.packages("RCurl")
+#library(RCurl)
+
+#URL <- "https://www.kaggle.com/c/sf-crime/download/test.csv.zip"
+#x <- getURL(URL)
+## Or 
+#x <- getURL(URL, ssl.verifypeer = FALSE)
+#data <- read.csv(text = x)
+
+#if Already downloaded
+data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
+
+
+head(data)
+```
+
+###### The data set contains an id, time stamp, day of week, district in SF, address, geolocation.  I filtered and added an 'hour' collumn so i can more effectively filter the time of the crime.
+
+```{r}
+library(lubridate)
+data$hour <- c(hour(data$Dates))
+```
+
+###### The data set contains an id, time stamp, day of week, district in SF, address, geolocation.  I filtered and added an 'hour' collumn so i can more effectively filter the time of the crime.
+
+
+* First i checked what day of the week crime accures. <br>
+
+```{r}
+barplot(table(data$DayOfWeek), col='blue')
+```
+
+  Seemed that they crime accures about the same on every day. <br>
+
+* Next i checked if a certain area has higher crime rate then others. <br>
+
+```{r}
+barplot(table(data$PdDistrict), col='blue')
+```
+
+  Looks like Southern leads the crime rate in SF! <br>
+
+* Now i want to see what at what time criminals like working <br>
+
+```{r}
+barplot(table(data$hour), col='purple')
+```
+
+ Crime peaks after-noon from 16-19, also at 12 and midnight...
+
+* Since 18 looks like the most dangerous hour to be outside, i checked what the crime looks like at 18 on the south side of San fransisco <br>
+-# getting the map
+
+```{r}
+#display results on a map
+library(ggmap)
+
+# Subset for South Side
+data1 <- subset(data, PdDistrict == 'SOUTHERN')
+
+# Get The Map
+map <- get_map(location = c(lon = mean(data1$X), lat = mean(data1$Y)), zoom = 15,
+               maptype = "satellite", scale = 2)
+# plotting the map with some points on it
+ggmap(map) +
+  geom_point(data = data1, aes(x = X, y = Y, colour = ifelse(hour==18,F,T), alpha = 0.1), size = 2, shape = 21) +  guides(fill=FALSE, alpha=FALSE, size=FALSE)
+```
+
