@@ -13,16 +13,16 @@ output: html_document
 
 ```{r}
 # install.packages("RCurl")
-#library(RCurl)
+library(RCurl)
 
-#URL <- "https://www.kaggle.com/c/sf-crime/download/test.csv.zip"
-#x <- getURL(URL)
+URL <- "https://www.kaggle.com/c/sf-crime/download/test.csv.zip"
+x <- getURL(URL)
 ## Or 
 #x <- getURL(URL, ssl.verifypeer = FALSE)
-#data <- read.csv(text = x)
+data <- read.csv(text = x)
 
 #if Already downloaded
-data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
+#data <- read.csv("/Users/orpaz/Downloads/test.csv", header=T, sep=",")
 
 
 head(data)
